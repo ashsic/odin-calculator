@@ -1,0 +1,102 @@
+/* Universal styles */
+
+* {
+    border: 1px dotted white;
+    font-family: "Courier New", monospace;
+    background-color: black;
+    color: white;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    height: 64px;
+    width: 64px;
+    font-size: 24px;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+/* Header styles */
+
+
+/* Main styles */
+
+main {
+    flex-grow: 1;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 460px;
+    border: 1px solid black;
+    border-radius: 10px;;
+}
+
+#display {
+    width: 360px;
+    height: 64px;
+
+}
+
+#display-text {
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+    font-size: 32px;
+    border: 1px solid black;
+    margin: 8px;
+    height: 48px;
+    text-align:right;
+}
+
+#buttons {
+    display: flex;
+}
+
+#top-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#left-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+}
+
+#digits > button {
+    background-color: rgb(128, 0, 0);
+}
+
+#digits {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#right-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+#right-buttons > button {
+    background-color: rgb(0, 177, 177);
+}
+
+/* Footer styles */
+
+#footer-container {
+    justify-self: flex-end;
+    background-color: rgb(100, 7, 7);
+}
