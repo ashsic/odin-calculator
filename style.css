@@ -27,6 +27,8 @@ button {
 header {
     display: flex;
     justify-content: center;
+    padding: 32px;
+
 }
 
 /* Main styles */
@@ -110,7 +112,7 @@ div.wrapper#wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+
 }
 
 /* Footer styles */
