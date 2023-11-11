@@ -3,6 +3,8 @@
 // Targeting
 let textBox = document.querySelector("#display-text");
 let buttons = document.querySelectorAll("button");
+let operator = "";
+let storedNum = "";
 
 function handleButtonClick(event) {
     let ettc = "";
@@ -11,10 +13,17 @@ function handleButtonClick(event) {
     }
 
     if (ettc >= '0' && ettc <= '9') {
-        if (event.target.textContent === "0" && textBox.textContent === ""){}
-        else textBox.textContent += event.target.textContent;
+        if (operator && !storedNum) {
+            storedNum = textBox.textContent;
+            textBox.textContent = "";
+        }
+        if (textBox.textContent === "0"){
+            textBox.textContent = event.target.textContent;
+        } else textBox.textContent += event.target.textContent;
     } else if (ettc === 'AC') {
         textBox.textContent = "";
+        operator = "";
+        storedNum = "";
     } else if (ettc === '+/-') {
         if (textBox.textContent.charAt(0) === '-') {
             textBox.textContent = textBox.textContent.slice(1);
@@ -23,13 +32,19 @@ function handleButtonClick(event) {
         }
     } else if (ettc === '%') {
         textBox.textContent = parseFloat(textBox.textContent) / 100.0;
-    } else if ("/x-+".includes(ettc)) {
-        
+    } else if ("/x-+".includes(ettc) && textBox.textContent) {
+        if (operator && storedNum && textBox.textContent) {
+            calculateResult(storedNum, textBox.textContent, operator);
+        }
+        operator = ettc;
+
     }
 }
-
-
 
 buttons.forEach(button => {
     button.addEventListener("click", handleButtonClick)
 });
+
+function calculateResult(num1, num2, operator) {
+    let calculator = {}
+}
