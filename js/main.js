@@ -46,19 +46,19 @@ buttons.forEach(button => {
 });
 
 function calculateResult(num1, num2, operator) {
-    let calculator = {
-        add: (num1, num2) => {
+    const calculator = {
+        "+": (num1, num2) => {
             return num1 + num2;
         },
-        subtract: (num1, num2) => {
+        "-": (num1, num2) => {
             return num1 - num2;
         },
-        multiply: (num1, num2) => {
+        "x": (num1, num2) => {
             return num1 * num2;
         },
-        divide: (num1, num2) => {
+        "/": (num1, num2) => {
             return num1 / num2;
         }
-
     }
+    return calculator[operator](num1, num2);
 }
